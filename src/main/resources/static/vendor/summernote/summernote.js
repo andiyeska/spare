@@ -1979,9 +1979,6 @@
       '    </div>' : ''
       ),
       '    <div class="modal-body">' + options.body + '</div>',
-      (options.footer ?
-      '    <div class="modal-footer">' + options.footer + '</div>' : ''
-      ),
       '  </div>',
       '</div>'
     ].join(''));
@@ -7292,14 +7289,6 @@
 
     this.initialize = function () {
       var $container = options.dialogsInBody ? $(document.body) : $editor;
-
-      var body = [
-        '<p class="text-center">',
-        '<a href="http://summernote.org/" target="_blank">Summernote 0.8.6</a> · ',
-        '<a href="https://github.com/summernote/summernote" target="_blank">Project</a> · ',
-        '<a href="https://github.com/summernote/summernote/issues" target="_blank">Issues</a>',
-        '</p>'
-      ].join('');
 
       this.$dialog = ui.dialog({
         title: lang.options.help,

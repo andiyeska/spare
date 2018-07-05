@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Responsive admin dashboard and web application ui kit. ">
+    <meta name="keywords" content="blank, starter">
+
+    <title>SPARE - Event Official Dashboard</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,300i" rel="stylesheet">
+
+    <!-- Styles -->
+    <link th:href="@{/css/core.min.css}" rel="stylesheet">
+    <link th:href="@{/css/app.min.css}" rel="stylesheet">
+    <link th:href="@{/css/style.min.css}" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" th:href="@{/img/apple-touch-icon.png}">
+    <link rel="icon" th:href="@{/img/favicon.png}">
+  </head>
+
+  <body>
+
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="spinner-dots">
+        <span class="dot1"></span>
+        <span class="dot2"></span>
+        <span class="dot3"></span>
+      </div>
+    </div>
+
+
+    <!-- Sidebar -->
+    <aside class="sidebar sidebar-expand-lg sidebar-icons-boxed">
+      <header class="sidebar-header">
+        <a class="logo-icon" href="../index.html"><img th:src="@{/img/logo-icon-light.png}" alt="logo icon"></a>
+        <span class="logo">
+          <a href="../index.html"><img th:src="@{/img/logo-light.png}" alt="logo"></a>
+        </span>
+      </header>
+
+      <nav class="sidebar-navigation">
+        <ul class="menu">
+
+          <li class="menu-category">Super Admin</li>
+
+          <li class="menu-item">
+            <a class="menu-link" th:href="@{/eod}">
+              <span class="icon fa fa-home"></span>
+              <span class="title">Dashboard</span>
+            </a>
+          </li>
+
+          <li class="menu-item">
+            <a class="menu-link" th:href="@{/eod/users}">
+              <span class="icon fa fa-users"></span>
+              <span class="title">User Management</span>
+            </a>
+          </li>
+          
+          <li class="menu-item">
+            <a class="menu-link" th:href="@{/eod/events}">
+              <span class="icon fa fa-calendar"></span>
+              <span class="title">Event Management</span>
+            </a>
+          </li>
+          
+          <li class="menu-category">Writer</li>
+          
+          <li class="menu-item active">
+            <a class="menu-link" th:href="@{/eod/articles}">
+              <span class="icon fa fa-file-text-o"></span>
+              <span class="title">Articles</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+    </aside>
+    <!-- END Sidebar -->
+
+
+    <!-- Topbar -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <span class="topbar-btn sidebar-toggler"><i>&#9776;</i></span>
+      </div>
+
+      <div class="topbar-right">
+        <ul class="topbar-btns">
+          <li class="dropdown">
+            <span class="topbar-btn" data-toggle="dropdown"><img class="avatar" th:src=@{/img/avatar.png} alt="..."></span>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="../page-extra/user-login-3.html"><i class="ti-power-off"></i> Logout</a>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+    </header>
+    <!-- END Topbar -->
+
+
+    <!-- Main container -->
+    <main>
+      <div class="main-content">
+        <div class="row">
+
+            <div class="col-md-4 col-xl-3">
+              <div class="card shadow-1">
+                <ul class="nav nav-lg nav-pills flex-column">
+                  <li class="nav-item active">
+                    <i class="fa fa-files-o"></i>
+                    <a class="nav-link" href="#">All</a>
+                    <span class="tag tag-pill tag-secondary">6</span>
+                  </li>
+                </ul>
+                <div class="card-footer text-center">
+                	<a class="btn btn-label btn-primary" th:href="@{/eod/articles/add}">
+						<label><i class="ti-pencil-alt"></i></label> Add Article
+					</a>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-md-8 col-xl-9">
+
+              <div class="media-list media-list-divided media-list-hover">
+
+
+                <div class="media-list-body bg-white b-1">
+                  <div class="media align-items-center" data-id="1">
+                    <a class="media-body text-truncate pl-12" href="#">
+                      <h5 class="fs-15">Getting Started with TheAdmin</h5>
+                      <small class="opacity-75 fw-300">
+                        Date Posted
+                        <span class="divider-dash"></span>
+                        27/01/2018
+                      </small>
+                    </a>
+
+                    <a class="media-action hover-primary" href="#" data-provide="tooltip" title="Edit"><i class="ti-pencil"></i></a>
+                    <a class="media-action hover-danger" href="#" data-provide="tooltip" title="Delete" data-toggle="modal" data-target="#delete-confirmation"><i class="ti-close"></i></a>
+                  </div>
+
+                  <div class="media align-items-center" data-id="2">
+                    <a class="media-body text-truncate pl-12" href="#">
+                      <h5 class="fs-15">Creating and Using Posts</h5>
+                      <small class="opacity-75 fw-300">
+                        Date Posted
+                        <span class="divider-dash"></span>
+                        27/01/2018
+                      </small>
+                    </a>
+
+                    <a class="media-action hover-primary" href="#" data-provide="tooltip" title="Edit"><i class="ti-pencil"></i></a>
+                    <a class="media-action hover-danger" href="#" data-provide="tooltip" title="Delete" data-toggle="modal" data-target="#delete-confirmation"><i class="ti-close"></i></a>
+                  </div>
+
+                  <div class="media align-items-center" data-id="2">
+                    <a class="media-body text-truncate pl-12" href="#">
+                      <h5 class="fs-15">How to upgrading TheAdmin to new version</h5>
+                      <small class="opacity-75 fw-300">
+                        Date Posted
+                        <span class="divider-dash"></span>
+                        27/01/2018
+                      </small>
+                    </a>
+
+                    <a class="media-action hover-primary" href="#" data-provide="tooltip" title="Edit"><i class="ti-pencil"></i></a>
+                    <a class="media-action hover-danger" href="#" data-provide="tooltip" title="Delete" data-toggle="modal" data-target="#delete-confirmation"><i class="ti-close"></i></a>
+                  </div>
+
+                  <div class="media align-items-center" data-id="2">
+                    <a class="media-body text-truncate pl-12" href="#">
+                      <h5 class="fs-15">TheAdmin in your language</h5>
+                      <small class="opacity-75 fw-300">
+                        Date Posted
+                        <span class="divider-dash"></span>
+                        27/01/2018
+                      </small>
+                    </a>
+
+                    <a class="media-action hover-primary" href="#" data-provide="tooltip" title="Edit"><i class="ti-pencil"></i></a>
+                    <a class="media-action hover-danger" href="#" data-provide="tooltip" title="Delete" data-toggle="modal" data-target="#delete-confirmation"><i class="ti-close"></i></a>
+                  </div>
+
+                  <div class="media align-items-center" data-id="2">
+                    <a class="media-body text-truncate pl-12" href="#">
+                      <h5 class="fs-15">Description of how and why to use JavaScript in themes and posts</h5>
+                      <small class="opacity-75 fw-300">
+                        Date Posted
+                        <span class="divider-dash"></span>
+                        27/01/2018
+                      </small>
+                    </a>
+
+                    <a class="media-action hover-primary" href="#" data-provide="tooltip" title="Edit"><i class="ti-pencil"></i></a>
+                    <a class="media-action hover-danger" href="#" data-provide="tooltip" title="Delete" data-toggle="modal" data-target="#delete-confirmation"><i class="ti-close"></i></a>
+                  </div>
+
+                  <div class="media align-items-center" data-id="2">
+                    <a class="media-body text-truncate pl-12" href="#">
+                      <h5 class="fs-15">How to use images in your pages</h5>
+                      <small class="opacity-75 fw-300">
+                        Date Posted
+                        <span class="divider-dash"></span>
+                        27/01/2018
+                      </small>
+                    </a>
+
+                    <a class="media-action hover-primary" href="#" data-provide="tooltip" title="Edit"><i class="ti-pencil"></i></a>
+                    <a class="media-action hover-danger" href="#" data-provide="tooltip" title="Delete" data-toggle="modal" data-target="#delete-confirmation"><i class="ti-close"></i></a>
+                  </div>
+
+                </div>
+
+
+                <footer class="flexbox align-items-center py-20">
+                  <span class="flex-grow text-right text-lighter pr-2">1-20 of 367</span>
+                  <nav>
+                    <a class="btn btn-sm btn-square disabled" href="#"><i class="ti-angle-left"></i></a>
+                    <a class="btn btn-sm btn-square" href="#"><i class="ti-angle-right"></i></a>
+                  </nav>
+                </footer>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div><!--/.main-content -->	
+
+	<!-- Modal -->
+	<div class="modal modal-center fade" id="delete-confirmation"
+		tabindex="-1" aria-hidden="true" style="display: none;">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">
+						<strong>article title</strong>
+					</h5>
+				</div>
+				<div class="modal-body text-center">
+					<p class="text-danger">Are you sure you want to delete this
+						article?</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-bold btn-pure btn-secondary"
+						data-dismiss="modal">No</button>
+					<button type="button" class="btn btn-bold btn-pure btn-danger"
+						data-dismiss="modal">Delete</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+      <!-- Footer -->
+      <footer class="site-footer">
+        <div class="row">
+          <div class="col-12">
+            <p class="text-center text-md-left">Copyright © 2018 SPARE. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+      <!-- END Footer -->
+
+    </main>
+    <!-- END Main container -->
+
+
+
+    <!-- Global quickview -->
+    <div id="qv-global" class="quickview" data-url="assets/data/quickview-global.html">
+      <div class="spinner-linear">
+        <div class="line"></div>
+      </div>
+    </div>
+    <!-- END Global quickview -->
+
+
+
+    <!-- Scripts -->
+    <script th:src="@{/js/core.min.js}"></script>
+    <script th:src="@{/js/app.min.js}"></script>
+    <script th:src="@{/js/script.min.js}"></script>
+
+  </body>
+</html>

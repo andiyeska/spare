@@ -17,4 +17,19 @@ public class EodController {
 		return "eod-users";
 	}
 	
+	@RequestMapping("/events")
+	public String events() {
+		return "eod-events";
+	}
+	
+	@RequestMapping("/articles")
+	public String articles() {
+		return "eod-articles";
+	}
+	
+	@RequestMapping("/articles/add")
+	public String articlesAdd() {
+		return "eod-articles-add";
+	}
+	
 }

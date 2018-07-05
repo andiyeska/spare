@@ -59,6 +59,18 @@
 						<span class="icon fa fa-users"></span> <span class="title">User
 							Management</span>
 				</a></li>
+
+				<li class="menu-item"><a class="menu-link"
+					th:href="@{/eod/events}"> <span class="icon fa fa-calendar"></span>
+						<span class="title">Event Management</span>
+				</a></li>
+				
+				<li class="menu-category">Writer</li>
+
+				<li class="menu-item"><a class="menu-link"
+					th:href="@{/eod/articles}"> <span
+						class="icon fa fa-file-text-o"></span> <span class="title">Articles</span>
+				</a></li>
 			</ul>
 		</nav>
 
@@ -159,8 +171,8 @@
 						</div>
 						<div class="col-md-6 offet-4">
 							<button class="btn btn-label btn-danger user-info-toggle" data-toggle="modal"
-								data-target="#remove-confirmation">
-								<label><i class="ti-trash"></i></label> Remove Account
+								data-target="#delete-confirmation">
+								<label><i class="ti-trash"></i></label> Delete Account
 							</button>
 						</div>
 					</div>
@@ -174,7 +186,7 @@
 	</div>
 
 	<!-- Modal -->
-	<div class="modal modal-center fade" id="remove-confirmation"
+	<div class="modal modal-center fade" id="delete-confirmation"
 		tabindex="-1" aria-hidden="true" style="display: none;">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -184,14 +196,14 @@
 					</h5>
 				</div>
 				<div class="modal-body text-center">
-					<p class="text-danger">Are you sure you want to remove this
+					<p class="text-danger">Are you sure you want to delete this
 						account?</p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-bold btn-pure btn-danger user-info-toggle"
+					<button type="button" class="btn btn-bold btn-pure btn-secondary user-info-toggle"
 						data-dismiss="modal">No</button>
-					<button type="button" class="btn btn-bold btn-pure btn-primary"
-						data-dismiss="modal">Yes</button>
+					<button type="button" class="btn btn-bold btn-pure btn-danger"
+						data-dismiss="modal">Delete</button>
 				</div>
 			</div>
 		</div>
@@ -212,10 +224,10 @@
 						this account?</p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-bold btn-pure btn-warning user-info-toggle"
+					<button type="button" class="btn btn-bold btn-pure btn-secondary user-info-toggle"
 						data-dismiss="modal">No</button>
-					<button type="button" class="btn btn-bold btn-pure btn-primary"
-						data-dismiss="modal">Yes</button>
+					<button type="button" class="btn btn-bold btn-pure btn-warning"
+						data-dismiss="modal">Reset</button>
 				</div>
 			</div>
 		</div>
