@@ -12,4 +12,9 @@ public class EodController {
 		return "eod-index";
 	}
 	
+	@RequestMapping("/users")
+	public String users() {
+		return "eod-users";
+	}
+	
 }

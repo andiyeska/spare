@@ -6,7 +6,7 @@
     <meta name="description" content="Responsive admin dashboard and web application ui kit. ">
     <meta name="keywords" content="blank, starter">
 
-    <title>Blank page &mdash; TheAdmin</title>
+    <title>SPARE - Event Official Dashboard</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,300i" rel="stylesheet">
@@ -45,75 +45,21 @@
       <nav class="sidebar-navigation">
         <ul class="menu">
 
-          <li class="menu-category">Category 1</li>
+          <li class="menu-category">Super Admin</li>
 
           <li class="menu-item active">
-            <a class="menu-link" href="../dashboard/general.html">
+            <a class="menu-link" th:href="@{/eod}">
               <span class="icon fa fa-home"></span>
               <span class="title">Dashboard</span>
             </a>
           </li>
 
           <li class="menu-item">
-            <a class="menu-link" href="#">
-              <span class="icon fa fa-user"></span>
-              <span class="title">Users</span>
-              <span class="arrow"></span>
+            <a class="menu-link" th:href="@{/eod/users}">
+              <span class="icon fa fa-users"></span>
+              <span class="title">User Management</span>
             </a>
-
-            <ul class="menu-submenu">
-              <li class="menu-item">
-                <a class="menu-link" href="#">
-                  <span class="dot"></span>
-                  <span class="title">Moderators</span>
-                </a>
-              </li>
-
-              <li class="menu-item">
-                <a class="menu-link" href="#">
-                  <span class="dot"></span>
-                  <span class="title">Customers</span>
-                </a>
-              </li>
-            </ul>
           </li>
-
-
-
-          <li class="menu-category">Category 2</li>
-
-
-          <li class="menu-item">
-            <a class="menu-link" href="#">
-              <span class="icon ti-layout"></span>
-              <span class="title">Layout</span>
-              <span class="arrow"></span>
-            </a>
-
-            <ul class="menu-submenu">
-              <li class="menu-item">
-                <a class="menu-link" href="#">
-                  <span class="dot"></span>
-                  <span class="title">Sidebar</span>
-                </a>
-              </li>
-
-              <li class="menu-item">
-                <a class="menu-link" href="#">
-                  <span class="dot"></span>
-                  <span class="title">Header</span>
-                </a>
-              </li>
-
-              <li class="menu-item">
-                <a class="menu-link" href="#">
-                  <span class="dot"></span>
-                  <span class="title">Footer</span>
-                </a>
-              </li>
-            </ul>
-          </li>
-
         </ul>
       </nav>
 
@@ -132,8 +78,6 @@
           <li class="dropdown">
             <span class="topbar-btn" data-toggle="dropdown"><img class="avatar" th:src=@{/img/avatar.png} alt="..."></span>
             <div class="dropdown-menu dropdown-menu-right">
-              <a class="dropdown-item" href="../page/profile.html"><i class="ti-user"></i> Profile</a>
-              <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="../page-extra/user-login-3.html"><i class="ti-power-off"></i> Logout</a>
             </div>
           </li>
@@ -148,6 +92,8 @@
     <main>
       <div class="main-content">
         <div class="row">
+        
+        <!-- Free Run Participant -->
           <div class="col-md-6">
             <div class="card card-body">
               <div class="flexbox">
@@ -163,6 +109,7 @@
             </div>
           </div>
 
+		<!-- Festival Participant -->
           <div class="col-md-6">
             <div class="card card-body">
               <div class="flexbox">
@@ -177,17 +124,127 @@
               </div>
             </div>
           </div>
-        </div>
+          
+          <!-- Gender Free Run -->
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-title"><strong>Gender</strong> Free Run</h5>
+              </div>
 
-        <div class="card">
-          <h4 class="card-title">Card title</h4>
+              <div class="card-body card-body">
+                <!-- Desktop Version -->
+                <div class="text-center py-20 d-none d-lg-block">
+                  <div data-provide="peity" data-type="donut" data-size="150" data-inner-radius="55" data-fill="#efb3e6,#ffdf7c">95,81</div>
+                </div>
+                <!-- Mobile Version -->
+                <div class="text-center py-20 d-lg-none">
+                  <div data-provide="peity" data-type="donut" data-size="87" data-inner-radius="35" data-fill="#efb3e6,#ffdf7c">95,81</div>
+                </div>
 
-          <div class="card-body">
+                <br>
 
+                <ul class="list-inline mb-0">
+                  <li class="flexbox mb-1">
+                    <div>
+                      <span class="badge badge-dot badge-lg mr-1" style="background-color: #efb3e6"></span>
+                      <span>Male</span>
+                    </div>
+                    <div>95</div>
+                  </li>
+
+                  <li class="flexbox mb-1">
+                    <div>
+                      <span class="badge badge-dot badge-lg mr-1" style="background-color: #ffdf7c"></span>
+                      <span>Female</span>
+                    </div>
+                    <div>81</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Cities Free Run -->
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-title"><strong>Cities</strong> Free Run</h5>
+              </div>
+
+              <div class="card-body card-body">
+                <!-- Desktop Version -->
+                <div class="text-center py-20 d-none d-lg-block">
+                  <div data-provide="peity" data-type="donut" data-size="150" data-inner-radius="55" data-fill="#efb3e6,#ffdf7c">65,21</div>
+                </div>
+                <!-- Mobile Version -->
+                <div class="text-center py-20 d-lg-none">
+                  <div data-provide="peity" data-type="donut" data-size="87" data-inner-radius="35" data-fill="#efb3e6,#ffdf7c">65,21</div>
+                </div>
+
+                <br>
+
+                <ul class="list-inline mb-0">
+                  <li class="flexbox mb-1">
+                    <div>
+                      <span class="badge badge-dot badge-lg mr-1" style="background-color: #efb3e6"></span>
+                      <span>Jakarta</span>
+                    </div>
+                    <div>65</div>
+                  </li>
+
+                  <li class="flexbox mb-1">
+                    <div>
+                      <span class="badge badge-dot badge-lg mr-1" style="background-color: #ffdf7c"></span>
+                      <span>Depok</span>
+                    </div>
+                    <div>21</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Publications Media -->
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-title"><strong>Publications</strong> Media</h5>
+              </div>
+
+              <div class="card-body card-body">
+                <!-- Desktop Version -->
+                <div class="text-center py-20 d-none d-lg-block">
+                  <div data-provide="peity" data-type="donut" data-size="150" data-inner-radius="55" data-fill="#efb3e6,#ffdf7c">105,21</div>
+                </div>
+                <!-- Mobile Version -->
+                <div class="text-center py-20 d-lg-none">
+                  <div data-provide="peity" data-type="donut" data-size="87" data-inner-radius="35" data-fill="#efb3e6,#ffdf7c">105,21</div>
+                </div>
+
+                <br>
+
+                <ul class="list-inline mb-0">
+                  <li class="flexbox mb-1">
+                    <div>
+                      <span class="badge badge-dot badge-lg mr-1" style="background-color: #efb3e6"></span>
+                      <span>Social Media</span>
+                    </div>
+                    <div>105</div>
+                  </li>
+
+                  <li class="flexbox mb-1">
+                    <div>
+                      <span class="badge badge-dot badge-lg mr-1" style="background-color: #ffdf7c"></span>
+                      <span>Banner</span>
+                    </div>
+                    <div>21</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
-
-
       </div><!--/.main-content -->
 
 
@@ -195,21 +252,7 @@
       <footer class="site-footer">
         <div class="row">
           <div class="col-md-6">
-            <p class="text-center text-md-left">Copyright © 2017 <a href="http://thetheme.io/theadmin">TheAdmin</a>. All rights reserved.</p>
-          </div>
-
-          <div class="col-md-6">
-            <ul class="nav nav-primary nav-dotted nav-dot-separated justify-content-center justify-content-md-end">
-              <li class="nav-item">
-                <a class="nav-link" href="../help/articles.html">Documentation</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../help/faq.html">FAQ</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://themeforest.net/item/theadmin-responsive-bootstrap-4-admin-dashboard-webapp-template/20475359?license=regular&amp;open_purchase_for_item_id=20475359&amp;purchasable=source&amp;ref=thethemeio">Purchase Now</a>
-              </li>
-            </ul>
+            <p class="text-center text-md-left">Copyright © 2018 SPARE. All rights reserved.</p>
           </div>
         </div>
       </footer>
