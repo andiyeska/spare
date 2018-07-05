@@ -7293,6 +7293,11 @@
     this.initialize = function () {
       var $container = options.dialogsInBody ? $(document.body) : $editor;
 
+      var body = [
+        '<p>',
+        '</p>'
+      ].join('');
+
       this.$dialog = ui.dialog({
         title: lang.options.help,
         fade: options.dialogsFade,
