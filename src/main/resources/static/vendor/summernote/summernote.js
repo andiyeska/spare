@@ -1979,6 +1979,9 @@
       '    </div>' : ''
       ),
       '    <div class="modal-body">' + options.body + '</div>',
+      (options.footer ?
+      '    <div class="modal-footer">' + options.footer + '</div>' : ''
+      ),
       '  </div>',
       '</div>'
     ].join(''));
