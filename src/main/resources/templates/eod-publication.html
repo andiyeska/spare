@@ -79,7 +79,7 @@
           
           <li class="menu-category">Admin</li>
           
-          <li class="menu-item open active">
+          <li class="menu-item">
             <a class="menu-link" href="#">
               <span class="icon fa fa-credit-card"></span>
               <span class="title">Payment</span>
@@ -87,7 +87,7 @@
             </a>
 
             <ul class="menu-submenu">
-              <li class="menu-item active">
+              <li class="menu-item">
                 <a class="menu-link" th:href="@{/eod/payments}">
                   <span class="dot"></span>
                   <span class="title">Fun Run</span>
@@ -127,7 +127,7 @@
             </ul>
           </li>
           
-          <li class="menu-item">
+          <li class="menu-item active">
             <a class="menu-link" th:href="@{/eod/publication}">
               <span class="icon fa fa-bullhorn"></span>
               <span class="title">Publication Media</span>
@@ -167,30 +167,39 @@
       <div class="main-content">
         <div class="card">
 			<h4 class="card-title">
-				<strong>Submitted</strong> Payments
+				<strong>Publication</strong> Media
 			</h4>
 
 			<div class="card-body">
 				<div class="row">
+					<div class="col-4 offset-8 pb-20">
+						<button class="btn btn-label btn-primary" data-toggle="modal"
+										data-target="#add-media">
+							<label><i class="ti-plus"></i></label> Add Media
+						</button>
+					</div>
 					<div class="col-12">
 						<table class="table table-striped table-bordered table-responsive"
 							cellspacing="0" data-provide="datatables">
 							<thead>
 								<tr>
-									<th style="width: 50%;">Transaction Code</th>
-									<th style="width: 50%">Date Submitted</th>
+									<th style="width: 50%;">Name</th>
+									<th style="width: 25%;">Effectivity</th>
+									<th style="width: 25%;">Status</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
 									<td><a href="#" data-toggle="modal"
-										data-target="#payment-info">boutique</a></td>
-									<td>27 January 2018</td>
+										data-target="#media-info">boutique</a></td>
+									<td>106</td>
+									<td class="text-primary">Active</td>
 								</tr>
 								<tr>
 									<td><a href="#" data-toggle="modal"
-										data-target="#payment-info">ayaya</a></td>
-									<td>27 January 2018</td>
+										data-target="#media-info">ayaya</a></td>
+									<td>30</td>
+									<td class="text-danger">Inactive</td>
 								</tr>
 							</tbody>
 						</table>
@@ -198,107 +207,53 @@
 				</div>
 			</div>
 		</div>
-      </div><!--/.main-content --> 
-      
-      <!-- Modal -->
-	<div class="modal modal-center fade" id="payment-info" tabindex="-1"
+      </div><!--/.main-content -->
+
+	<!-- Modal -->
+	<div class="modal modal-center fade" id="media-info" tabindex="-1"
 		aria-hidden="true" style="display: none;">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title">
-						<strong>TRX12304123</strong>
+						<strong>media name</strong>
 					</h5>
-					<button type="button" class="close" data-dismiss="modal">
-						<span aria-hidden="true">×</span>
+				</div>
+				<div class="modal-body text-center">
+					<button class="btn btn-label btn-danger media-info-toggle"
+						data-toggle="modal" data-target="#update-start-date">
+						<label><i class="fa fa-ban"></i></label> Deactivate
+					</button>
+					
+					<button class="btn btn-label btn-primary media-info-toggle"
+						data-toggle="modal" data-target="#update-start-date">
+						<label><i class="fa fa-check"></i></label> Activate
 					</button>
 				</div>
-				<div class="modal-body">
-					<div class="row no-gutters" data-provide="photoswipe">
-						<table>
-							<tr>
-								<td><img class="cursor-pointer img-thumbnail img-payment" th:src="@{/img/besar.jpg}"
-									alt="..."></td>
-							</tr>
-							<tr>
-								<td></td>
-							</tr>
-							<tr>
-								<td>
-									<strong>Transaction Code</strong>
-								</td>
-								<td>:</td>
-								<td>TRX12304123</td>
-							</tr>
-
-							<tr>
-								<td>
-									<strong>Name</strong>
-								</td>
-								<td>:</td>
-								<td>Bang Jo</td>
-							</tr>
-
-							<tr>
-								<td>
-									<strong>Date Submitted</strong>
-								</td>
-								<td>:</td>
-								<td>12 June</td>
-							</tr>
-						</table>
-					</div>
-				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-bold btn-danger payment-info-toggle"
-						data-toggle="modal" data-target="#reject-confirmation">Reject</button>
-					<button type="button" class="btn btn-bold btn-primary payment-info-toggle"
-						data-toggle="modal" data-target="#approve-confirmation">Approve</button>
+					<button type="button" class="btn btn-bold btn-pure btn-secondary"
+						data-dismiss="modal">Close</button>
 				</div>
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- Modal -->
-	<div class="modal modal-center fade" id="reject-confirmation"
+	<div class="modal modal-center fade" id="update-start-date"
 		tabindex="-1" aria-hidden="true" style="display: none;">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title">
-						<strong>TRX12304123</strong>
+						<strong>media name</strong>
 					</h5>
 				</div>
 				<div class="modal-body text-center">
-					<p class="text-danger">Are you sure you want to reject this
-						account?</p>
+					<p class="text-primary">Are you sure you want to activate this
+						media?</p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-bold btn-pure btn-secondary payment-info-toggle"
-						data-dismiss="modal">No</button>
-					<button type="button" class="btn btn-bold btn-pure btn-danger"
-						data-dismiss="modal">Yes</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<!-- Modal -->
-	<div class="modal modal-center fade" id="approve-confirmation"
-		tabindex="-1" aria-hidden="true" style="display: none;">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title">
-						<strong>TRX12304123</strong>
-					</h5>
-				</div>
-				<div class="modal-body text-center">
-					<p class="text-primary">Are you sure you want to approve this
-						account?</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-bold btn-pure btn-secondary payment-info-toggle"
+					<button type="button" class="btn btn-bold btn-pure btn-secondary media-info-toggle"
 						data-dismiss="modal">No</button>
 					<button type="button" class="btn btn-bold btn-pure btn-primary"
 						data-dismiss="modal">Yes</button>
@@ -306,8 +261,37 @@
 			</div>
 		</div>
 	</div>
+	
+	<!-- Modal -->
+	<div class="modal modal-center fade" id="add-media" tabindex="-1"
+		aria-hidden="true" style="display: none;">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">
+						<strong>Add New Media</strong>
+					</h5>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-12">
+							<div class="form-group">
+								<label>Name</label><input class="form-control" type="text">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-bold btn-pure btn-secondary"
+						data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-bold btn-pure btn-primary"
+						data-dismiss="modal">Submit</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
-	<!-- Footer -->
+      <!-- Footer -->
       <footer class="site-footer">
         <div class="row">
           <div class="col-12">
@@ -338,15 +322,15 @@
     <script th:src="@{/js/script.min.js}"></script>
 	<script>
 		app.ready(function() {
-			$('.payment-info-toggle').on('click', function() {
-				paymentInfo();
+			$('.media-info-toggle').on('click', function() {
+				mediaInfo();
 			});
-
-			function paymentInfo() {
-				$('#payment-info').modal('toggle');
+			
+			function mediaInfo(){
+				$('#media-info').modal('toggle');
 			}
 		});
 	</script>
 
-</body>
+  </body>
 </html>

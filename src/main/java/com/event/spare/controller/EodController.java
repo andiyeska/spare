@@ -42,4 +42,9 @@ public class EodController {
 		return "eod-attendance";
 	}
 	
+	@RequestMapping("/publication")
+	public String publication() {
+		return "eod-publication";
+	}
+	
 }
