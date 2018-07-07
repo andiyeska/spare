@@ -32,4 +32,14 @@ public class EodController {
 		return "eod-articles-add";
 	}
 	
+	@RequestMapping("/payments")
+	public String payments() {
+		return "eod-payments";
+	}
+	
+	@RequestMapping("/attendance")
+	public String attendance() {
+		return "eod-attendance";
+	}
+	
 }

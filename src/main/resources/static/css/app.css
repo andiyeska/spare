@@ -23501,3 +23501,10 @@ a.text-danger:hover, a.text-danger:focus {
 .align-sub {
   vertical-align: sub;
 }
+
+.img-payment {
+    height: auto; 
+    width: auto; 
+    max-width: 100px; 
+    max-height: 100px;
+}
