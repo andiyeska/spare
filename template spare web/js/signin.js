@@ -11,6 +11,7 @@ $(function() {
 		$("#register-form").delay(100).fadeIn(100);
  		$("#signin-form").fadeOut(100);
 		$('#signin-form-link').removeClass('active');
+		$('.panel').css('width: 150%;');
 		$(this).addClass('active');
 		e.preventDefault();
 	});

@@ -1069,6 +1069,7 @@ textarea.input {
   Sign In & Register
 ===========================================================*/
 
+
 .signin-title{
   font-size: 36px;
   text-align: center;
@@ -1118,7 +1119,7 @@ textarea.input {
   background-image: -ms-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
   background-image: -o-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
 }
-.panel-signin input[type="text"],.panel-signin input[type="email"],.panel-signin input[type="password"],.panel-signin select{
+.panel-signin input[type="text"],.panel-signin input[type="email"],.panel-signin input[type="password"], .panel-signin input[type="date"], .panel-signin select{
   height: 45px;
   border: 1px solid #ddd;
   font-size: 16px;
