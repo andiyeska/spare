@@ -209,3 +209,8 @@ var marker = new google.maps.Marker({
     position: position,
     map: map,
 });
+
+var infowindow = new google.maps.InfoWindow({
+    content: "Fakultas Kesehatan Masyarakat, Universitas Indonesia"
+});
+infowindow.open(map,marker);
