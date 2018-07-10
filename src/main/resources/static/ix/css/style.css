@@ -280,7 +280,7 @@ textarea.input {
 .main-nav li a {
   position: relative;
   padding: 30px 15px;
-  color: #0b0f28;
+  color: #FFF;
   text-transform: uppercase;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
@@ -340,7 +340,7 @@ textarea.input {
     margin: 0px -15px;
     max-height: 0;
     overflow-y: scroll;
-    background-color: #FFF;
+    background-color: #000;
     -webkit-transition: 0.3s all;
     transition: 0.3s all;
   }

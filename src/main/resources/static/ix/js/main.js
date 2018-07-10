@@ -85,5 +85,14 @@
 			offset: '95%'
 		});
 	});
+	
+	$(window).scroll(function () {
+        if ($(this).scrollTop() > 50) { 
+            $('.navbar-brand .logo-img').attr('src','/img/logospare.png');
+        }
+        if ($(this).scrollTop() < 50) { 
+            $('.navbar-brand .logo-img').attr('src','/img/logo-light.png');
+        }
+    })
 
 })(jQuery);
