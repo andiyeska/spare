@@ -93,6 +93,5 @@
         if ($(this).scrollTop() < 50) { 
             $('.navbar-brand .logo-img').attr('src','/img/logo-light.png');
         }
-    })
-
+    });
 })(jQuery);

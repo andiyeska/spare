@@ -309,7 +309,7 @@ textarea.input {
   color: #dd0a37;
 }
 
-#header.transparent-navbar .main-nav li a:hover {
+#header.transparent-navbar, #header.fixed-navbar .main-nav li a:hover {
   color: #dd0a37;
 }
 
