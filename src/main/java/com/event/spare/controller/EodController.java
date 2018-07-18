@@ -1,5 +1,7 @@
 package com.event.spare.controller;
 
+import java.security.Principal;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -45,6 +47,15 @@ public class EodController {
 	@RequestMapping("/publication")
 	public String publication() {
 		return "eod-publication";
+	}
+	
+	@RequestMapping("/signin")
+	public String signin(Principal principal) {
+		if(principal != null) {
+    		return "redirect:/eod";
+    	}
+		
+		return "eod-sign-in";
 	}
 	
 }
