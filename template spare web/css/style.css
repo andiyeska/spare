@@ -185,6 +185,17 @@ textarea.input {
   transform: translateY(0%);
 }
 
+hr {
+  -moz-border-bottom-colors: none;
+  -moz-border-image: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color: #EEEEEE -moz-use-text-color #FFFFFF;
+  border-style: solid none;
+  border-width: 1px 0;
+  margin: 18px 0;
+}
 /*=========================================================
 	LOGO
 ===========================================================*/
@@ -1213,6 +1224,18 @@ textarea.input {
   top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.ml-16{
+  margin-left: 16px;
+}
+
+.ta-l {
+  text-align: left;
+}
+
+.ta-c{
+  text-align: center;
 }
 
 /*=========================================================
