@@ -68,7 +68,7 @@
 					<li><a class="strong" href="schedule">Events</a></li>
 					<li><a class="strong" href="contact">Contact</a></li>
 					<li><a class="strong" href="blog.html">News</a></li>
-					<li class="active"><a class="strong" href="signin.html">Sign in</a></li>
+					<li class="active"><a class="strong" href="signin.html">PROFILE</a></li>
 				</ul>
 			</nav>
 			<!-- /Navigation -->
@@ -93,7 +93,54 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								
+								<form id="signin-form" action="www.google.com" method="post" role="form" style="display: block;">
+									<h2 class="col-md-12 ta-l">Personal Information</h2>
+									<h6 class="col-md-12 font-s ta-l">we will keep your data, <strong>only for this event</strong></h6>
+									<div class="row">
+										<div class="col-lg-6 col-md-6 col-sm-6 ml-16">
+											<div class="form-group">
+												<label for="fname">First name</label>
+												<input type="text" name="fname" id="fname" tabindex="1" class="form-control personal" placeholder="Your first name" value="Joni" disabled="true">
+											</div>
+										</div>
+										<div class="col-lg-5 col-md-5 col-sm-5 ml-16">
+											<div class="form-group">
+												<label for="lname">Last name</label>
+												<input type="text" name="lname" id="lname" tabindex="1" class="form-control" placeholder="Your last name" value="Toelank" disabled>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-lg-4 col-md-4 col-sm-4 ml-16">
+											<div class="form-group">
+												<label for="pnumber">Phone number</label>
+												<input type="text" name="pnumber" id="pnumber" tabindex="1" class="form-control" placeholder="Your first name" value="085772771283" disabled>
+											</div>
+										</div>
+										<div class="col-lg-7 col-md-7 col-sm-7 ml-16">
+											<div class="form-group">
+												<label for="emailadd">Email address</label>
+												<input type="text" name="email" id="emailadd" tabindex="1" class="form-control" placeholder="Your last name" value="joni.thoelank@gmail.com" disabled>
+											</div>
+										</div>
+									</div>
+									<div class="form-group signin-input">
+										<div class="row">
+											<div class="col-lg-12">
+												<div class="text-center">
+													<a onclick="editdata()" id="edit-data" tabindex="5" id="edit-data" style="text-decoration: none; cursor: pointer">data not valid?</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-group signin-input">
+										<div class="row">
+											<div class="col-sm-6 col-sm-offset-3">
+												<button type="submit" id="confirm-data-change" class="form-control btn btn-signin" style="visibility: hidden">CONFIRM CHANGE</button>
+											</div>
+										</div>
+									</div>
+								</form>
 							</div>
 						</div>
 					</div>
@@ -104,7 +151,23 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								
+								<h2 class="col-md-12 ta-l">Order Information</h2>
+								<h6 class="col-md-12 font-s ta-l">below are information related to your order</h6>
+								<a href="order-detail.html">
+									<div class="col-md-12 card transaction-card">
+										<h2 class="col-md-12 col-sm-12 col-xs-12 card-number strong">#1</h2>
+										<span class="col-md-6 col-sm-12 col-xs-12">ORDER ID:<span class="strong"> SPR180001</span></span>
+										<span class="col-md-6 col-sm-12 col-xs-12 label label-info">Menunggu konfirmasi pembayaran</span><br><br>
+									</div>
+								</a>
+								<a href="order-detail.html">
+									<div class="col-md-12 card transaction-card">
+										<h2 class="col-md-12 col-sm-12 col-xs-12 card-number strong">#2</h2>
+										<span class="col-md-6 col-sm-12 col-xs-12">ORDER ID:<span class="strong"> SPR180001</span></span>
+										<span class="col-md-6 col-sm-12 col-xs-12 label label-success">Transaksi berhasil</span><br><br>
+									</div>
+								</a>
+
 							</div>
 						</div>
 					</div>
@@ -209,6 +272,16 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 	<!-- jQuery Plugins -->
 	<script src="js/jquery.min.js"></script>
+	<script>
+		function editdata(){
+			document.getElementById('fname').removeAttribute("disabled");
+			document.getElementById('lname').removeAttribute("disabled");
+			document.getElementById('pnumber').removeAttribute("disabled");
+			document.getElementById('emailadd').removeAttribute("disabled");
+			document.getElementById('edit-data').style.visibility = "hidden";
+			document.getElementById('confirm-data-change').style.visibility = "visible";
+		}
+	</script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery.waypoints.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>

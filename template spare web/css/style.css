@@ -1217,6 +1217,18 @@ hr {
     padding: 32px;
 }
 
+.transaction-card{
+  height: 100%; 
+  cursor: pointer; 
+  padding: 16px; 
+  margin-bottom: 16px;
+}
+
+.transaction-card:hover{
+  background-color: lightgrey;
+  opacity: 0.7;
+}
+
 .text-front-centered {
   border-radius: 50px;
   font-size: 16px;
@@ -1292,6 +1304,9 @@ hr {
 @media only screen and (max-width: 700px){
     .modal-content {
         width: 100%;
+    }
+    .transaction-card{
+      height: 120px;
     }
 }
 
