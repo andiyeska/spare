@@ -91,7 +91,8 @@
 				<div class="col-md-6 col-md-offset-3">
 					<div class="home-content">
 							<img class="center" src="img/fun run 3.png" style="width: 50%; margin-bottom: 16px">
-							<h6 class="lead" style="text-align: center">A <strong>run </strong>full of <strong>joy</strong></h6>
+							<h6 class="lead ta-c">A <strong>run </strong>full of <strong>joy</strong></h6>
+							<a href="#" class="main-btn center ta-c" style="width: 280px;">download guideline</a>
 						</div>
 				</div>
 			</div>
@@ -149,28 +150,28 @@
 
 						<!-- sponsor -->
 						<div class="col-md-4 col-sm-4 col-xs-6">
-							<a href="#" class="sponsor">
-								<img src="./img/racepack 1.png" alt="">
+							<span class="sponsor" >
+								<img  src="./img/racepack 1.png" alt="">
 								<span class="whitefont">Lorem</span>
-							</a>
+							</span>
 						</div>
 						<!-- /sponsor -->
 
 						<!-- sponsor -->
 						<div class="col-md-4 col-sm-4 col-xs-6">
-							<a href="#" class="sponsor">
-								<img src="./img/racepack 1.png" alt="">
+							<span class="sponsor" >
+								<img  src="./img/racepack 1.png" alt="">
 								<span class="whitefont">Lorem</span>
-							</a>
+							</span>
 						</div>
 						<!-- /sponsor -->
 
 						<!-- sponsor -->
 						<div class="col-md-4 col-sm-4 col-xs-6">
-							<a href="#" class="sponsor">
-								<img src="./img/racepack 1.png" alt="">
+							<span class="sponsor" >
+								<img  src="./img/racepack 1.png" alt="">
 								<span class="whitefont">Lorem</span>
-							</a>
+							</span>
 						</div>
 						<!-- /sponsor -->
 
@@ -196,10 +197,10 @@
 				</div>
 				<!-- /section title -->
 				<!-- sponsor -->
-				<div class="col-md-4 col-sm-4 col-xs-6">
+				<div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3 col-sm-offset-3">
 					<div class="card">
 					  	<div class="card-container">
-					   		<h1 style="text-align: center"><b>1st<span style="font-weight: lighter">place</span></b></h1> 
+					   		<h1 class="ta-c"><b>1st<span class="font-s">place</span></b></h1> 
 					    	<p>Architect & Engineer</p> 
 					    	<ul style="list-style: disc; margin-left:3rem;">
 					    		<li>
@@ -216,48 +217,7 @@
 					</div>
 				</div>
 				<!-- /sponsor -->
-				<!-- sponsor -->
-				<div class="col-md-4 col-sm-4 col-xs-6">
-					<div class="card">
-					  	<div class="card-container">
-					   		<h1 style="text-align: center"><b>1st<span style="font-weight: lighter">place</span></b></h1> 
-					    	<p>Architect & Engineer</p> 
-					    	<ul style="list-style: disc; margin-left:3rem;">
-					    		<li>
-					    			Lorem ipsum
-					    		</li>
-					    		<li>
-					    			Lorem ipsum
-					    		</li>
-					    		<li>
-					    			Lorem ipsum
-					    		</li>
-					    	</ul>
-					  	</div>
-					</div>
-				</div>
-				<!-- /sponsor -->
-				<!-- sponsor -->
-				<div class="col-md-4 col-sm-4 col-xs-6">
-					<div class="card">
-					  	<div class="card-container">
-					   		<h1 style="text-align: center"><b>1st<span style="font-weight: lighter">place</span></b></h1> 
-					    	<p>Architect & Engineer</p> 
-					    	<ul style="list-style: disc; margin-left:3rem;">
-					    		<li>
-					    			Lorem ipsum
-					    		</li>
-					    		<li>
-					    			Lorem ipsum
-					    		</li>
-					    		<li>
-					    			Lorem ipsum
-					    		</li>
-					    	</ul>
-					  	</div>
-					</div>
-				</div>
-				<!-- /sponsor -->
+				
 
 			</div>
 			<!-- row -->
@@ -276,7 +236,11 @@
 					<h3 class="title"><span>The</span> <span style="color: #dd0a37;">Route</span></h3>
 				</div>
 				<!-- /section title -->
-				<img src="img/rute.png" style="width: 100%">
+				<img id="route" src="img/rute.png" style="width: 100%">
+				<div id="myModal" class="modal">
+					<span class="close">&times;</span>
+				  	<img class="modal-content" id="img01">
+				</div>
 
 			</div>
 			<!-- row -->
@@ -485,26 +449,25 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 	<!-- jQuery Plugins -->
 	<script src="js/jquery.min.js"></script>
-	<script>
-		$(document).ready(function(){
-			$('#funrun-thumb').mouseover(
-			   	function(){				
-			   	   	$('#funrun-thumb').width('22%');
-			});
-			$('#funrun-thumb').mouseout(
-			   	function(){				
-			   	   	$('#funrun-thumb').width('20%');
-			});
-			$('#festival-thumb').mouseover(
-			   	function(){				
-			   	   	$('#festival-thumb').width('22%');
-			});
-			$('#festival-thumb').mouseout(
-			   	function(){				
-			   	   	$('#festival-thumb').width('20%');
-			});
+	<script type="text/javascript">
+		// Get the modal
+		var modal = document.getElementById('myModal');
 
-		});
+		// Get the image and insert it inside the modal - use its "alt" text as a caption
+		var img = document.getElementById('route');
+		var modalImg = document.getElementById("img01");
+		img.onclick = function(){
+		    modal.style.display = "block";
+		    modalImg.src = this.src;
+		}
+
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() { 
+		    modal.style.display = "none";
+		}
 	</script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery.waypoints.min.js"></script>

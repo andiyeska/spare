@@ -83,7 +83,18 @@
 				<div class="panel panel-signin" style="padding: 40px;">
 					<div class="panel-body">
 						<div class="row">
-							<div class="col-lg-12">
+							<div class="col-md-12">
+								<h5 class="ml-16">ORDER ID: <span>SPR180001</span></h5>
+								<span class="col-md-5 label label-info ml-16">Menunggu konfirmasi pembayaran</span><br><br>
+
+								<!-- label berhasil -->
+								<!-- <span class="col-md-3 label label-success ml-16">Transaksi berhasil</span><br><br> -->
+								<!-- /label berhasil -->
+
+								<!-- label gagal -->
+								<!-- <span class="col-md-3 label label-danger ml-16">Transaksi gagal</span><br><br> -->
+								<!-- label gagal -->
+								
 								<form id="signin-form" action="www.google.com" method="post" role="form" style="display: block;">
 									<h2 class="col-md-12 ta-l">Personal Information</h2>
 									<h6 class="col-md-12 font-s ta-l"></h6>
@@ -114,16 +125,19 @@
 												<h6 class="col-md-12 font-s ta-l" style="margin-bottom: 40px;"></h6>
 												<!-- funrun ticket -->
 												<div class="form-group col-md-12 col-xs-12">
-													<input class="col-md-2" style="width: 64px;" type="number" min="1" max="3" name="quantity" tabindex="1" value="1" disabled>
+													<span class="col-md-1">1</span>
 													<span class="col-md-3">Fun Run Ticket</span>
-													<span class="col-md-offset-5" id="sum-price" style="color: grey; padding-left: 10px; width: 100px;">Rp200.000,00</span>
+													<span class="col-md-offset-5" id="sum-price" style="color: grey; padding-left: 24px; width: 100px;">Rp200.000,00</span>
+													<div id="tc" class="col-md-12 ta-c" style="padding: 16px; background-color: #f6f6f6; border-radius: 4px; color: grey;">
+														Run Number (Nomor Lari) : <span class="strong">FR0001</span>
+													</div>
 												</div><hr style="border: 0.5px solid lightgrey">
 												<!-- /funrun ticket -->
 												<!-- funrun ticket -->
 												<div class="form-group col-md-12 col-xs-12">
-													<input class="col-md-2" style="width: 64px;" type="number" min="1" max="3" name="quantity" tabindex="1" value="1" disabled>
+													<span class="col-md-1">1</span>	
 													<span class="col-md-3">Festival Ticket</span>
-													<span class="col-md-offset-5" id="sum-price" style="color: grey; padding-left: 10px; width: 100px;">Free</span>
+													<span class="col-md-offset-5" id="sum-price" style="color: grey; padding-left: 24px; width: 100px;">Free</span>
 
 												</div><hr style="border: 0.5px solid lightgrey">
 												<div class="form-group col-md-12 col-xs-12">
@@ -136,14 +150,17 @@
 												<div class="form-group col-md-12 col-xs-12">
 													<span class="col-md-4">Total price</span>
 													<span class="col-md-offset-5" id="sum-price" style="color: grey; padding-left: 24px; width: 100px;">Rp200.521,00
-												</div>
-												<div class="form-group signin-input mt-16">
-													<div class="row">
-														<div class="col-sm-6 col-sm-offset-3">
-															<h6 class="col-md-12 font-s ta-c"><strong>pay your order</strong> to finish your order</h6>
-															<button type="submit" class="form-control btn btn-signin">PROCEED TO PAY</button>
-														</div>
-													</div>
+												</div><br><br><br><hr>
+												<div>
+													<h4 class="ta-c">Transfer to</span></h4>
+													<h2 id="norek" onclick="copy('150093210002')" class="ta-c" style="margin-bottom: 8px; cursor: pointer">150093210002</h2>
+													<h5 class="ta-c">a/n SPARE UI</span>
+												</div><hr>
+												<h6 class="col-md-12 font-s ta-l">upload your proof of payment here <strong>(max image size = 1Mb)</strong></h6>
+												<div>
+												<input class="form-control" type="file" name="bukti-transfer" id="pop" accept="image/*" required>
+												<img class="center" id="pop-thumbnail" style="width: 50%; margin-top: 16px; border-radius: 10px; max-width: 200px;" src=""><br>
+												<button type="submit" class="form-control btn btn-signin">CONFIRM PROOF OF PAYMENT</button>
 												</div>
 											</form>
 										</div>
@@ -167,12 +184,23 @@
 		$(document).ready(function(){
 
 			$('#sum-price').text(OSREC.CurrencyFormatter.format(200000, { currency: 'IDR' }));
-
-			// $('#toggle-button-tc').click(
-			//    	function(){				
-			//    	   	$('#tc').toggle(100);
-			// });
+			$('#pop').change(function(){
+				$('#pop-thumbnail').attr('src', window.URL.createObjectURL($("#pop")[0].files[0]));
+			});
+			
 		});
+
+		function copy(value){
+		    var tempInput = document.createElement("input");
+		    tempInput.style = "position: absolute; left: -10000px; top: -10000px";
+		    tempInput.value = value;
+		    document.body.appendChild(tempInput);
+		    tempInput.select();
+		    document.execCommand("copy");
+		    document.body.removeChild(tempInput);
+		    alert("Nomor rekening copied to clipboard");
+		}
+		
 	</script>
 	<script src="js/jquery.waypoints.min.js"></script>
 	<script src="js/currencyFormatter.js"></script>

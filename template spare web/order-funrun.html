@@ -85,25 +85,16 @@
 						<div class="row">
 							<div class="col-lg-12">
 								<form id="signin-form" action="www.google.com" method="post" role="form" style="display: block;">
-									<h2 class="col-md-12" style="text-align: left">Personal Information</h2>
-									<h6 class="col-md-12" style="font-weight: 100; text-align: center; text-align: left">we will keep your data, <strong>only for this event</strong></h6>
+									<h2 class="col-md-12 ta-l">Personal Information</h2>
+									<h6 class="col-md-12 font-s ta-l">we will keep your data, <strong>only for this event</strong></h6>
 									<div class="col-md-12" style="margin-bottom: 24px; ">
-										<button type="button" class="btn btn-secondary col-md-12" id="toggle-button-tc" style="border-color: lightgrey">Terms & Condition</button>
-										<div id="tc" class="col-md-12" style="padding: 24px; background-color: #f6f6f6; border-radius: 4px; color: grey; display: none">
-										  	<ul style="list-style: disc; padding-left: 20px; font-size: 13px">
-										  		<li>Lorem ipsum dolor sir amet</li>
-										  		<li>Lorem ipsum dolor sir amet</li>
-										  		<li>Lorem ipsum dolor sir amet</li>
-										  		<li>Lorem ipsum dolor sir amet</li>
-										  		<li>Lorem ipsum dolor sir amet</li>
-										  	</ul>
-										</div>
+										<a href="#" target="_blank" type="button" class="btn btn-warning col-md-12" id="toggle-button-tc" style="border-color: lightgrey">Terms & Condition</a>
 									</div>
 									<div class="row">
 										<div class="col-lg-6 col-md-6 col-sm-6 ml-16">
 											<div class="form-group">
 												<label for="fname">First name</label>
-												<input type="text" name="fname" id="fname" tabindex="1" class="form-control" placeholder="Your first name" value="Joni" disabled>
+												<input type="text" name="fname" id="fname" tabindex="1" class="form-control personal" placeholder="Your first name" value="Joni" disabled="true">
 											</div>
 										</div>
 										<div class="col-lg-5 col-md-5 col-sm-5 ml-16">
@@ -116,14 +107,14 @@
 									<div class="row">
 										<div class="col-lg-4 col-md-4 col-sm-4 ml-16">
 											<div class="form-group">
-												<label for="fname">Phone number</label>
-												<input type="text" name="fname" id="fname" tabindex="1" class="form-control" placeholder="Your first name" value="085772771283" disabled>
+												<label for="pnumber">Phone number</label>
+												<input type="text" name="pnumber" id="pnumber" tabindex="1" class="form-control" placeholder="Your first name" value="085772771283" disabled>
 											</div>
 										</div>
 										<div class="col-lg-7 col-md-7 col-sm-7 ml-16">
 											<div class="form-group">
-												<label for="lname">Email address</label>
-												<input type="text" name="lname" id="lname" tabindex="1" class="form-control" placeholder="Your last name" value="joni.thoelank@gmail.com" disabled>
+												<label for="emailadd">Email address</label>
+												<input type="text" name="email" id="emailadd" tabindex="1" class="form-control" placeholder="Your last name" value="joni.thoelank@gmail.com" disabled>
 											</div>
 										</div>
 									</div>
@@ -131,15 +122,21 @@
 										<div class="row">
 											<div class="col-lg-12">
 												<div class="text-center">
-													<a href="#" tabindex="5" class="forgot-password" style="text-decoration: none">data not valid?</a>
+													<a onclick="editdata()" id="edit-data" tabindex="5" id="edit-data" style="text-decoration: none; cursor: pointer">data not valid?</a>
 												</div>
 											</div>
 										</div>
 									</div><br><br>
-									<h2 class="col-md-12" style="text-align: left">Order Information</h2>
-									<h6 class="col-md-12" style="font-weight: 100; text-align: center; text-align: left; margin-bottom: 40px;">this data will be used for <strong>fun run event</strong></h6>
+									<h2 class="col-md-12 ta-l">Order Information</h2>
+									<h6 class="col-md-12 font-s ta-l" style="margin-bottom: 40px;">this data will be used for <strong>fun run event</strong></h6>
+									<img style="width: 100%; margin-bottom: 24px;" id="sizechart" src="img/size-chart.jpg">
+									<!-- The Modal -->
+									<div id="myModal" class="modal">
+									 	<span class="close">&times;</span>
+									  	<img class="modal-content" id="img01">
+									</div>
 									<div class="row">
-										<div class="col-lg-6 col-md-6 col-sm-6 ml-16">
+										<div class="col-lg-5 col-md-5 col-sm-6 ml-16">
 											<div class="form-group">
 												<label for="knowus">Shirt size</label>
 												<select class="form-control" name="knowus" id="knowus" tabindex="4">
@@ -153,6 +150,12 @@
 												 </select>
 											</div><br>
 										</div>
+										<div class="col-lg-6 col-md-6 col-sm-6 ml-16">
+											<div class="form-group">
+												<label for="penyakit">Medical report</label>
+												<textarea type="textarea" name="penyakit" id="penyakit" tabindex="1" class="form-control" placeholder="Example: Diabetes A, Asma sedang" value="" style="max-width: 100%"></textarea>
+											</div><br>
+										</div>
 									</div>
 
 									<div class="form-group signin-input">
@@ -162,7 +165,7 @@
 											</div>
 										</div>
 									</div>
-								</form>
+								
 							</div>
 						</div>
 					</div>
@@ -186,9 +189,8 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form id="signin-form" action="www.google.com" method="post" role="form" style="display: block;">
-									<h2 class="col-md-12" style="text-align: left">Your order</h2>
-									<h6 class="col-md-12" style="font-weight: 100; text-align: center; text-align: left; margin-bottom: 40px;">below are summary of your order. <strong>please read it carefully</strong>.</h6>
+									<h2 class="col-md-12 ta-l">Your order</h2>
+									<h6 class="col-md-12 font-s ta-l" style="margin-bottom: 40px;">below are summary of your order. <strong>please read it carefully</strong>.</h6>
 									<!-- funrun ticket -->
 									<div class="form-group col-md-12 col-xs-12">
 										<input class="col-md-2" style="width: 64px;" type="number" min="1" max="1" name="quantity" tabindex="1" value="1" disabled>
@@ -207,7 +209,7 @@
 									<hr style="border: 1px solid black">
 									<div class="form-group text-center col-md-12">
 										<input type="checkbox" tabindex="3" class="" name="agree" id="agree" required>
-										<label for="remember" style="font-weight: lighter; font-size: 13px">by clicking this you agree to the <a href="#toggle-button-tc" type="button" style="color: blue">terms and condition</a> for this event</label>
+										<label class="font-s" style="font-size: 13px">by clicking this you agree to the <a href="#" target="_blank"  type="button" style="color: blue">terms and condition</a> for this event</label>
 									</div>
 									<div class="form-group signin-input">
 										<div class="row">
@@ -250,11 +252,34 @@
 
 			$('#sum-price').text(OSREC.CurrencyFormatter.format(200000, { currency: 'IDR' }));
 
-			$('#toggle-button-tc').click(
-			   	function(){				
-			   	   	$('#tc').toggle(100);
-			});
 		});
+
+		function editdata(){
+			document.getElementById('fname').removeAttribute("disabled");
+			document.getElementById('lname').removeAttribute("disabled");
+			document.getElementById('pnumber').removeAttribute("disabled");
+			document.getElementById('emailadd').removeAttribute("disabled");
+			document.getElementById('edit-data').style.visibility = "hidden";
+		}
+
+		// Get the modal
+		var modal = document.getElementById('myModal');
+
+		// Get the image and insert it inside the modal - use its "alt" text as a caption
+		var img = document.getElementById('sizechart');
+		var modalImg = document.getElementById("img01");
+		img.onclick = function(){
+		    modal.style.display = "block";
+		    modalImg.src = this.src;
+		}
+
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() { 
+		    modal.style.display = "none";
+		}
 	</script>
 	<script src="js/jquery.waypoints.min.js"></script>
 	<script src="js/currencyFormatter.js"></script>
